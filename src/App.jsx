@@ -1,11 +1,15 @@
 import "./app.less";
 import React from "react";
 import Dock from "./components/Dock";
+import Background from "./components/Background";
 
 function App() {
-  return <div>
-    <Dock />
-  </div>;
+  return (
+    <>
+      <Background />
+      <Dock />
+    </>
+  );
 }
 
 export default App;
