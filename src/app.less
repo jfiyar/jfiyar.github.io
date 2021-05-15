@@ -1,6 +1,18 @@
 body {
   // background: #33433b url("./assets/background.jpg");
   margin: 0;
+  animation: init 1s;
+  user-select: none;
+}
+@keyframes init {
+  from {
+    opacity: 0;
+    padding-top: 32px;
+  }
+  to {
+    opacity: 1;
+    padding-top: 0;
+  }
 }
 * {
   box-sizing: border-box;

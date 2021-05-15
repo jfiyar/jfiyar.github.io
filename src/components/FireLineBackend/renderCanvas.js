@@ -7,8 +7,8 @@ export default function renderCanvas(
   canvas.height = h;
   const ctx = canvas.getContext("2d");
 
-  ctx.fillStyle = "rgba(255,0,0,0.14)";
-  ctx.fillRect(0, 0, w, h);
+  // ctx.fillStyle = "rgba(255,0,0,0.14)";
+  // ctx.fillRect(0, 0, w, h);
 
   return function cleanCanvas() {};
 }
