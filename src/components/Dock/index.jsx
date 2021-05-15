@@ -1,9 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-  forwardRef,
-  useImperativeHandle,
-} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import FireLineBackend from "../FireLineBackend";
 import styles from "./index.module.less";
 import huyaIcon from "@/assets/icons/huya.jpg";
@@ -15,18 +10,26 @@ import githubIcon from "@/assets/icons/github.jpg";
 import { SettingFilled, SettingOutlined } from "@ant-design/icons";
 
 const sites = [
-  [tengxunIcon, "1"],
-  [huyaIcon, "2"],
-  [bingIcon, "3"],
-  [baiduIcon, "4"],
-  [googleIcon, "5"],
-  [githubIcon, "6"],
+  [tengxunIcon, "https://v.qq.com/"],
+  [huyaIcon, "https://www.huya.com/"],
+  [bingIcon, "https://cn.bing.com/"],
+  [baiduIcon, "https://www.baidu.com/"],
+  [googleIcon, "https://www.google.com/"],
+  [githubIcon, "https://github.com/"],
 ];
 
 export function hideDock() {}
 
 export default function () {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const count = useRef(0);
+
+  function onImgLoaded() {
+    count.current++;
+    if (count.current >= sites.length) {
+      setVisible(true);
+    }
+  }
 
   useEffect(function () {
     hideDock = () => {
@@ -41,7 +44,7 @@ export default function () {
         {sites.map(([icon, url]) => {
           return (
             <a key={url} href={url}>
-              <img className={styles.icon} src={icon} />
+              <img onLoad={onImgLoaded} className={styles.icon} src={icon} />
             </a>
           );
         })}
