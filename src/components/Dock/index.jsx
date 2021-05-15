@@ -7,7 +7,7 @@ import React, {
 import FireLineBackend from "../FireLineBackend";
 import styles from "./index.module.less";
 import huyaIcon from "@/assets/icons/huya.jpg";
-import tengxunIcon from "@/assets/icons/tengxunshiping.png";
+import tengxunIcon from "@/assets/icons/tengxunshiping.jpg";
 import baiduIcon from "@/assets/icons/baidu.jpg";
 import googleIcon from "@/assets/icons/google.jpg";
 import bingIcon from "@/assets/icons/bing.jpg";
