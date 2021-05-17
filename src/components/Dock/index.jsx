@@ -8,6 +8,7 @@ import googleIcon from "@/assets/icons/google.jpg";
 import bingIcon from "@/assets/icons/bing.jpg";
 import githubIcon from "@/assets/icons/github.jpg";
 import { SettingFilled, SettingOutlined } from "@ant-design/icons";
+import SettingView from "./SettingView";
 
 const sites = [
   [tengxunIcon, "https://v.qq.com/"],
@@ -48,7 +49,9 @@ export default function () {
             </a>
           );
         })}
-        <SettingOutlined className={styles.icon} />
+        <SettingView>
+          <SettingOutlined className={styles.icon} />
+        </SettingView>
         <SettingFilled className={styles.icon} />
       </div>
     </div>
