@@ -49,8 +49,8 @@ export default function () {
             </a>
           );
         })}
-        <SettingView>
-          <SettingOutlined className={styles.icon} />
+        <SettingView className={styles.icon}>
+          <SettingOutlined className={styles.settingIcon} />
         </SettingView>
         <SettingFilled className={styles.icon} />
       </div>
