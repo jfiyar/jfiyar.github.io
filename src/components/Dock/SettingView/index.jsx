@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./index.module.less";
+import { CloseOutlined } from "@ant-design/icons";
 
 export default function SettingView(props) {
   const [visible, setVisible] = useState(false);
@@ -10,7 +11,13 @@ export default function SettingView(props) {
       </span>
       <div
         className={[styles.panel, visible ? styles.panelShow : ""].join(" ")}
-      ></div>
+      >
+        <div style={{ textAlign: "right" }}>
+          <button className={styles.closeBtn} onClick={() => setVisible(false)}>
+            <CloseOutlined />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
